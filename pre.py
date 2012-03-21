@@ -16,5 +16,6 @@ if __name__ == "__main__":
     content = content % (date.today())
 
     gc = GmailConnector()
-    #member
-    gc.send(["pgonee@buzzni.com"], "pre", content)
+
+    #gc.send(["pgonee@buzzni.com"], "pre", content)
+    gc.send(members, "pre", content)

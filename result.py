@@ -78,8 +78,9 @@ if __name__ == "__main__":
         content += "\t---------\n"
 
     a = GmailConnector()
-    #[ a["email"] for a in get_members() ]
-    a.send(["pgonee@buzzni.com"], "result", content)
+
+    #a.send(["pgonee@buzzni.com", "result", content)
+    a.send([ a["email"] for a in get_members() ], "result", content)
 
 
 
