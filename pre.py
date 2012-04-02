@@ -17,5 +17,5 @@ if __name__ == "__main__":
 
     gc = GmailConnector()
 
-    #gc.send(["pgonee@buzzni.com"], "pre", content)
-    gc.send(members, "pre", content)
+    gc.send(["pgonee@buzzni.com"], "pre", content)
+#    gc.send(members, "pre", content)

@@ -13,7 +13,7 @@ class GmailConnector(object):
         account = ""
         passwd = ""
 
-        fp = open("./sender_account.secret", "r")
+        fp = open("/home/newmoni/workspace/buzzni_lunchbot/sender_account.secret", "r")
         account, passwd = fp.read().split(",")
 
         self.mail = Sender("gmail", account, passwd)
@@ -30,7 +30,7 @@ class GmailConnector(object):
         return self.mail.send(targets, title, content)
 
 def get_members():
-    fp = open("./members.secret", "r")
+    fp = open("/home/newmoni/workspace/buzzni_lunchbot/members.secret", "r")
 
     member_list = []
     #이메일,이름,식사,남/여,팀장
@@ -64,6 +64,6 @@ def get_members():
     return member_list
 
 def get_account():
-    fp = open("./sender_account.secret", "r")
+    fp = open("/home/newmoni/workspace/buzzni_lunchbot/sender_account.secret", "r")
     return fp.read().split(",")
 

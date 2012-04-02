@@ -10,9 +10,11 @@ if __name__ == "__main__":
     members = get_members()
     account, passwd = get_account()
     M = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-    M.login(account, passwd)
-    M.select()
+    print account, passwd
+    M.login("%s" % account, "%s" % passwd)
 
+    exit()
+    M.select()
     typ, data = M.search(None, 'ALL')
     for num in data[0].split():
         typ, data = M.fetch(num, '(BODY[HEADER])')
@@ -79,8 +81,8 @@ if __name__ == "__main__":
 
     a = GmailConnector()
 
-    #a.send(["pgonee@buzzni.com", "result", content)
-    a.send([ a["email"] for a in get_members() ], "result", content)
+    a.send(["pgonee@buzzni.com"], "result", content)
+#    a.send([ a["email"] for a in get_members() ], "result", content)
 
 
 
